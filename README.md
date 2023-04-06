@@ -1,5 +1,5 @@
 <div align="center">
-# Climacast
+<h1>Climacast </h1>
 </div>
 
 ## Requirements
