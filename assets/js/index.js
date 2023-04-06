@@ -118,4 +118,15 @@ function toggleTemperatureUnit() {
   displayWeather();
 }
 
+function toggleWindUnit() {
+  if (windUnit === 'kph') {
+    windUnit = 'mph';
+    windSpeed = windSpeed * 0.621371;
+  } else {
+    windUnit = 'kph';
+    windSpeed = windSpeed / 0.621371;
+  }
+  displayWeather();
+}
+
 
