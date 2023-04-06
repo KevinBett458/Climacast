@@ -25,3 +25,9 @@ function searchWeather(event) {
   event.preventDefault();
   city = searchInput.value.trim();
   if (!city) return;
+
+  // Show the loading bar
+  const loading = document.querySelector('#loading');
+  loading.style.display = 'block';
+
+
