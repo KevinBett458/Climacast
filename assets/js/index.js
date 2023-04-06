@@ -59,5 +59,12 @@ function searchWeather(event) {
           });
       }
     })
+    .catch(error => {
+      // Hide the loading bar
+      loading.style.display = 'none';
+      weatherInfo.innerHTML = `<p>Sorry, something went wrong.</p>`;
+      console.error(error);
+    });
+}
 
 
