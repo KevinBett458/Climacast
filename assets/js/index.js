@@ -47,4 +47,17 @@ function searchWeather(event) {
         weatherDescription = data.current.condition.text;
         iconUrl = `https:${data.current.condition.icon}`;
 
+        fetch(`${forecastApiBaseUrl}?key=${apiKey}&q=${city}&days=5`)
+          .then(response => response.json())
+          .then(data => {
+            if(data.error){
+              weatherInfo.innerHTML = `<p>${data.error.message}</p>`;
+            } else {
+              forecastData = data.forecast.forecastday;
+              displayWeather();
+            }
+          });
+      }
+    })
+
 
