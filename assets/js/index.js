@@ -30,4 +30,21 @@ function searchWeather(event) {
   const loading = document.querySelector('#loading');
   loading.style.display = 'block';
 
+  fetch(`${currentApiBaseUrl}?key=${apiKey}&q=${city}`)
+    .then(response => response.json())
+    .then(data => {
+      // Hide the loading bar
+      loading.style.display = 'none';
+      if (data.error) {
+        weatherInfo.innerHTML = `<p>${data.error.message}</p>`;
+      } else {
+        locationData = data.location;
+        country = locationData.country;
+        localtime = locationData.localtime;
+        windSpeed = data.current.wind_kph;
+        humidity = data.current.humidity;
+        temperature = data.current.temp_c;
+        weatherDescription = data.current.condition.text;
+        iconUrl = `https:${data.current.condition.icon}`;
+
 
