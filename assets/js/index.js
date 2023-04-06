@@ -107,4 +107,15 @@ function displayWeather() {
   forecastInfo.innerHTML += '</div>';
 }
 
+function toggleTemperatureUnit() {
+  if (temperatureUnit === 'C') {
+    temperatureUnit = 'F';
+    temperature = (temperature * 9 / 5) + 32;
+  } else {
+    temperatureUnit = 'C';
+    temperature = (temperature - 32) * 5 / 9;
+  }
+  displayWeather();
+}
+
 
