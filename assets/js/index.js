@@ -20,3 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+function searchWeather(event) {
+  event.preventDefault();
+  city = searchInput.value.trim();
+  if (!city) return;
