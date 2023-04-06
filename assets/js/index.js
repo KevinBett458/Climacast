@@ -9,4 +9,14 @@ let city, country, localtime, windSpeed, humidity, temperature, weatherDescripti
 const searchInput = document.querySelector('#search-input');
 const searchBtn = document.querySelector('#search-btn');
 const weatherInfo = document.querySelector('.weather-info');
-const forecastInfo = document.querySelector(`.forecast-info`)
+const forecastInfo = document.querySelector(`.forecast-info`);
+
+document.addEventListener('DOMContentLoaded', function() {
+  searchBtn.addEventListener('click', searchWeather);
+
+  searchInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      searchWeather(event);
+    }
+  });
+});
