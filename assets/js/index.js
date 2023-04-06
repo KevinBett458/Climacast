@@ -67,4 +67,18 @@ function searchWeather(event) {
     });
 }
 
+function displayWeather() {
+  weatherInfo.innerHTML = `
+    <h2>City: ${city.toUpperCase()}</h2>
+    <p>Country: ${country}</p>
+    <p>${localtime}</p>
+    <img src="${iconUrl}" alt="${weatherDescription}">
+    <p>Condition: ${weatherDescription}</p>
+    <p>Temperature: ${temperature}°${temperatureUnit}</p>
+    <button id="toggle-temp" onclick="toggleTemperatureUnit()">Toggle</button>
+    <p>Windspeed: ${windSpeed} ${windUnit}</p>
+    <button id="toggle-wind" onclick="toggleWindUnit()">Toggle</button>
+    <p>Humidity: ${humidity}</p>
+  `;
+
 
