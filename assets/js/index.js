@@ -81,4 +81,30 @@ function displayWeather() {
     <p>Humidity: ${humidity}</p>
   `;
 
+  // Clear forecastInfo container
+  forecastInfo.innerHTML = '';
+
+  // Display forecast data
+  forecastInfo.innerHTML += '<h3>5-Day Forecast:</h3>';
+  forecastInfo.innerHTML += '<div class="forecast-container">';
+  forecastData.forEach(day => {
+    const date = day.date;
+    const maxTemp = day.day.maxtemp_c;
+    const minTemp = day.day.mintemp_c;
+    const condition = day.day.condition.text;
+    const icon = `https:${day.day.condition.icon}`;
+
+    forecastInfo.innerHTML += `
+      <div class="forecast-item">
+        <p>Date: ${date}</p>
+        <img src="${icon}" alt="${condition}">
+        <p>Condition: ${condition}</p>
+        <p>Max Temperature: ${maxTemp}°${temperatureUnit}</p>
+        <p>Min Temperature: ${minTemp}°${temperatureUnit}</p>
+      </div
+    `;
+  });
+  forecastInfo.innerHTML += '</div>';
+}
+
 
