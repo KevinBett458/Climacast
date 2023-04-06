@@ -39,3 +39,31 @@ h1{
 #search-btn:hover {
   background-color: #345e3a;
 }
+
+/* Style the weather info container */
+.weather-info {
+  display: block;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background-color: lightpink;
+  margin-bottom: 20px;
+}
+
+.forecast-info{
+  display: block;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background-color:blue;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
